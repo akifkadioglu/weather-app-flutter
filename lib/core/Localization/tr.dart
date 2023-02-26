@@ -8,7 +8,7 @@ class Turkish {
         I18nKeys.SOMETHING_WENT_WRONG: 'Bir şey ters gitti',
         I18nKeys.MAPS: 'Haritalar',
         I18nKeys.SCREENSHOT_TEXT: 'Gökyüzüne bakınca aklıma sen geldin :)',
-
+        I18nKeys.SORRY: 'Üzgünüm',
         "N": "Kuzey",
         "NbE": "Kuzey Doğu",
         "NNE": "Kuzey-Kuzeydoğu",

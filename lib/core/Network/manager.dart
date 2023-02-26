@@ -38,6 +38,9 @@ class NetworkManager {
         case HttpStatus.forbidden:
           SnackbarManager.snackbar(I18nKeys.ERROR.tr, jsonDecode(response.body)['message']);
           break;
+        case HttpStatus.badRequest:
+          SnackbarManager.snackbar(I18nKeys.ERROR.tr, jsonDecode(response.body)['error']['message']);
+          break;
         default:
           SnackbarManager.snackbar(I18nKeys.ERROR.tr, I18nKeys.SOMETHING_WENT_WRONG.tr);
       }

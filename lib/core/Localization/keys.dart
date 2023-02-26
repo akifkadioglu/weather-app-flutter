@@ -5,6 +5,7 @@ class I18nKeys {
   static const String SOMETHING_WENT_WRONG =  'something_went_wrong';
   static const String MAPS =                  'maps';
   static const String SCREENSHOT_TEXT =       'screenshot_text';
+  static const String SORRY =                 'sorry';
   
   
 }

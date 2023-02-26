@@ -8,7 +8,7 @@ class English {
         I18nKeys.SOMETHING_WENT_WRONG: 'Something went wrong',
         I18nKeys.MAPS: 'Maps',
         I18nKeys.SCREENSHOT_TEXT: 'When I looked at the sky, I thought of you :)',
-        
+        I18nKeys.SORRY: 'Sorry',
         "N": "North",
         "NbE": "North by East",
         "NNE": "North-Northeast",

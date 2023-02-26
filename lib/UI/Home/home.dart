@@ -7,6 +7,7 @@ import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:weather_app_flutter/UI/Components/custom_appbar.dart';
 import 'package:weather_app_flutter/UI/Components/custom_text_input.dart';
+import 'package:weather_app_flutter/UI/Components/view_model.dart';
 import 'package:weather_app_flutter/UI/Home/Components/information_card.dart';
 import 'package:weather_app_flutter/core/Localization/keys.dart';
 
@@ -19,6 +20,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   ScreenshotController screenshotController = ScreenshotController();
+  ComponentController c = Get.put(ComponentController());
+  @override
+  void initState() {
+    c.searchWeather('');
+    super.initState();
+  }
 
   void _takeScreenshot() async {
     await screenshotController.capture().then((bytes) async {
@@ -61,6 +68,7 @@ class _HomeState extends State<Home> {
         onPressed: _takeScreenshot,
         child: const Icon(Icons.gesture),
       ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
