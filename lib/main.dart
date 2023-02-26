@@ -29,10 +29,11 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(
-        useMaterial3: true,
         colorScheme: lightColorScheme,
       ),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+      darkTheme: ThemeData(
+        colorScheme: darkColorScheme,
+      ),
       home: const Home(),
       debugShowCheckedModeBanner: false,
     );

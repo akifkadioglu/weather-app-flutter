@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weather_app_flutter/UI/Style/font_family.dart';
+import 'package:weather_app_flutter/color_schemes.g.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -7,24 +9,18 @@ class CustomAppBar extends StatelessWidget {
     required this.title,
   });
   final String title;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title.tr),
-      backgroundColor: const Color(0xFF00629D),
+      elevation: 3,
+      backgroundColor: lightColorScheme.primary,
       titleTextStyle: const TextStyle(
         fontSize: 22,
-        fontFamily: 'Jura',
+        fontFamily: FontFamily.JURA,
       ),
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.dark_mode),
-          color: Colors.white,
-          onPressed: () {
-            Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
-          },
-        ),
-      ],
+      centerTitle: true,
     );
   }
 }
