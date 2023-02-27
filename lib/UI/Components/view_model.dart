@@ -16,14 +16,24 @@ class ComponentController extends GetxController {
   var isSearching = false.obs;
   var current = currentModelFromJson(JSONMocks().current_mock).obs;
   var searchCount = 0.obs;
-  changeTheme() {
+  var bottomSheetHeight = 0.0.obs;
+  var bottomSheetColor = const Color.fromARGB(255, 231, 54, 42).obs;
+
+  void getInformation() {
+    bottomSheetHeight.value = bottomSheetHeight.value == 0 ? 150 / 2 : 0;
+    bottomSheetColor.value = bottomSheetHeight.value == 0
+        ? const Color.fromARGB(255, 231, 54, 42)
+        : const Color.fromARGB(255, 255, 255, 255);
+  }
+
+  void changeTheme() {
     Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
     isDarkMode.value = Get.isDarkMode;
   }
 
   Future<void> searchWeather(String value) async {
     searchCount.value += 1;
-    containerHeight.value = 100;
+    containerHeight.value = 70;
     isSearching.value = true;
     current.value = await NetworkManager().getMethod(
           HTTPRoutes.CURRENT,
@@ -36,7 +46,7 @@ class ComponentController extends GetxController {
         ) ??
         currentModelFromJson(JSONMocks().current_mock);
     isSearching.value = false;
-    containerHeight.value = 450;
+    containerHeight.value = 430;
     if (searchCount.value % 2 == 0) {
       _loadInterstitialAd();
     }

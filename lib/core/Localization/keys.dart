@@ -6,6 +6,6 @@ class I18nKeys {
   static const String MAPS =                  'maps';
   static const String SCREENSHOT_TEXT =       'screenshot_text';
   static const String SORRY =                 'sorry';
-  
+  static const String STAR_REQUEST =          'request';
   
 }

@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:weather_app_flutter/UI/Components/custom_appbar.dart';
+import 'package:weather_app_flutter/UI/Components/custom_bottom_sheet.dart';
 import 'package:weather_app_flutter/UI/Components/custom_text_input.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
 import 'package:weather_app_flutter/UI/Home/Components/information_card.dart';
@@ -69,6 +70,7 @@ class _HomeState extends State<Home> {
         child: const Icon(Icons.gesture),
       ),
       resizeToAvoidBottomInset: false,
+      bottomSheet: const CustomBottomSheet(),
     );
   }
 }

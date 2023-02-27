@@ -9,6 +9,7 @@ class Turkish {
         I18nKeys.MAPS: 'Haritalar',
         I18nKeys.SCREENSHOT_TEXT: 'Gökyüzüne bakınca aklıma sen geldin :)',
         I18nKeys.SORRY: 'Üzgünüm',
+        I18nKeys.STAR_REQUEST: '5 yıldız verirseniz çok seviniriz :)',
         "N": "Kuzey",
         "NbE": "Kuzey Doğu",
         "NNE": "Kuzey-Kuzeydoğu",

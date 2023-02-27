@@ -9,6 +9,7 @@ class English {
         I18nKeys.MAPS: 'Maps',
         I18nKeys.SCREENSHOT_TEXT: 'When I looked at the sky, I thought of you :)',
         I18nKeys.SORRY: 'Sorry',
+        I18nKeys.STAR_REQUEST: 'We would appreciate it if you could give a 5 star :)',
         "N": "North",
         "NbE": "North by East",
         "NNE": "North-Northeast",
