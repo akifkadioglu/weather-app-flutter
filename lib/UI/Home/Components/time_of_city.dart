@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:weather_app_flutter/UI/Components/custom_chip.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
 import 'package:intl/intl.dart';
+import 'package:weather_app_flutter/core/Localization/keys.dart';
 
 class TimeOfCity extends StatelessWidget {
   const TimeOfCity({super.key});
@@ -24,14 +25,14 @@ class TimeOfCity extends StatelessWidget {
           title: DateFormat('yyyy MMMM dd EEEE HH:mm', Get.locale?.languageCode)
               .format(DateTime.parse(dateTime.toString())),
           icon: Icons.schedule,
-          func: c.getInformation,
+          description: I18nKeys.DATE.tr,
         ),
         CustomChip(
           iconColor: Colors.teal,
           borderColor: const Color.fromARGB(50, 0, 150, 136),
           title: result.location.tzId.toString(),
           icon: Icons.schedule,
-          func: c.getInformation,
+          description: I18nKeys.TIMEZONE.tr,
         ),
       ],
     );

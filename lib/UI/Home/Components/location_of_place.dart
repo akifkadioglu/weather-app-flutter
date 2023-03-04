@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_flutter/UI/Components/custom_chip.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
+import 'package:weather_app_flutter/core/Localization/keys.dart';
 
 class LocationOfPlace extends StatelessWidget {
   const LocationOfPlace({super.key});
@@ -20,13 +21,13 @@ class LocationOfPlace extends StatelessWidget {
             borderColor: const Color.fromARGB(50, 83, 109, 254),
             title: result.location.country.toString(),
             icon: Icons.outlined_flag,
-            func: c.getInformation,
+            description: I18nKeys.COUNTRY.tr,
           ),
           CustomChip(
             iconColor: Colors.indigoAccent,
             borderColor: const Color.fromARGB(50, 83, 109, 254),
             title: result.location.region.toString(),
-            func: c.getInformation,
+            description: I18nKeys.REGION.tr,
           ),
         ],
       ),

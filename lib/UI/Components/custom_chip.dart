@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flutter/core/Snackbar/snackbar_manager.dart';
 
 class CustomChip extends StatelessWidget {
   const CustomChip({
@@ -6,14 +7,14 @@ class CustomChip extends StatelessWidget {
     required this.iconColor,
     required this.borderColor,
     required this.title,
-    required this.func,
+    required this.description,
     this.icon,
   });
   final Color iconColor;
   final Color borderColor;
   final String title;
   final IconData? icon;
-  final VoidCallback func;
+  final String description;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +32,9 @@ class CustomChip extends StatelessWidget {
           title,
           style: TextStyle(color: iconColor),
         ),
-        onPressed: () => func(),
+        onPressed: () {
+          SnackbarManager.infoSnackbar(description, title);
+        },
         pressElevation: 0,
       ),
     );
