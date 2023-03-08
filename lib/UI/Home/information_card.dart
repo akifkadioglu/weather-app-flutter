@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
-import 'package:weather_app_flutter/UI/Home/Components/location_of_place.dart';
-import 'package:weather_app_flutter/UI/Home/Components/name_of_place_and_statu.dart';
-import 'package:weather_app_flutter/UI/Home/Components/temp_c_and_image.dart';
-import 'package:weather_app_flutter/UI/Home/Components/time_of_city.dart';
-import 'package:weather_app_flutter/UI/Home/Components/wind_and_humidity.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/air_quality.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/location_of_place.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/name_of_place_and_statu.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/temp_c_and_image.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/time_of_city.dart';
+import 'package:weather_app_flutter/UI/Home/InformationComponents/wind_and_humidity.dart';
 import 'package:weather_app_flutter/color_schemes.g.dart';
 import 'package:weather_app_flutter/core/Localization/keys.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,7 +26,7 @@ class _InformationCardState extends State<InformationCard> {
     return Obx(() {
       return AnimatedContainer(
         width: context.mediaQuery.size.width,
-        height: c.containerHeight.value,
+        height: c.containerHeight.value == 100 ? 100 : null,
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
         child: Obx(() {
@@ -49,6 +50,7 @@ class _InformationCardState extends State<InformationCard> {
                               const TimeOfCity(),
                               const LocationOfPlace(),
                               const WindAndHumidity(),
+                              const AirQuality(),
                               mapsButton(c),
                             ],
                           ),

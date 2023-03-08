@@ -30,13 +30,6 @@ class WindAndHumidity extends StatelessWidget {
             icon: Icons.wind_power,
             description: I18nKeys.WIND_POWER.tr,
           ),
-          CustomChip(
-            iconColor: Colors.lightBlue,
-            borderColor: const Color.fromARGB(45, 0, 174, 255),
-            title: "%${result.current.humidity.toString()}",
-            icon: Icons.water_drop_outlined,
-            description: I18nKeys.HUMIDITY.tr,
-          ),
         ],
       ),
     );

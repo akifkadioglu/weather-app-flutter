@@ -1,0 +1,51 @@
+{
+  "location": {
+    "name": "Zero",
+    "region": "",
+    "country": "Ethiopia",
+    "lat": 11.17,
+    "lon": 39.35,
+    "tz_id": "Africa/Addis_Ababa",
+    "localtime_epoch": 1678279506,
+    "localtime": "2023-03-08 15:45"
+  },
+  "current": {
+    "last_updated_epoch": 1678279500,
+    "last_updated": "2023-03-08 15:45",
+    "temp_c": 22.2,
+    "temp_f": 72.0,
+    "is_day": 1,
+    "condition": {
+      "text": "GÃ¼neÅli",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+      "code": 1000
+    },
+    "wind_mph": 8.5,
+    "wind_kph": 13.7,
+    "wind_degree": 85,
+    "wind_dir": "E",
+    "pressure_mb": 1011.0,
+    "pressure_in": 29.84,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 33,
+    "cloud": 3,
+    "feelslike_c": 23.6,
+    "feelslike_f": 74.5,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 6.0,
+    "gust_mph": 9.8,
+    "gust_kph": 15.8,
+    "air_quality": {
+      "co": 330.5,
+      "no2": 0.4000000059604645,
+      "o3": 57.20000076293945,
+      "so2": 0.6000000238418579,
+      "pm2_5": 11.899999618530273,
+      "pm10": 33.0,
+      "us-epa-index": 1,
+      "gb-defra-index": 1
+    }
+  }
+}

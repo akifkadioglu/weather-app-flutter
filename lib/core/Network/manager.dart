@@ -25,6 +25,7 @@ class NetworkManager {
         Uri.parse(HTTPRoutes.BASE_URL + path).replace(queryParameters: parameter),
         headers: HTTPSettings.headers,
       );
+      print(response.body);
       switch (response.statusCode) {
         case HttpStatus.ok:
           if (modelFromJson != null) {

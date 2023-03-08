@@ -3,7 +3,7 @@ import 'package:weather_app_flutter/core/Localization/keys.dart';
 
 class JSONMocks {
   static var location = [37.73811198003289, 29.103935381582524];
-  String current_mock = '''
+  String currentMock = '''
               {
                 "custom_id": "my-id-1",
                 "q": "53,-0.12",
@@ -44,7 +44,17 @@ class JSONMocks {
                     "vis_miles": 6.0,
                     "uv": 2.0,
                     "gust_mph": 33.1,
-                    "gust_kph": 53.3
+                    "gust_kph": 53.3,
+                    "air_quality": {
+                        "co": 847.7999877929688,
+                        "no2": 76.0999984741211,
+                        "o3": 8.899999618530273,
+                        "so2": 64.9000015258789,
+                        "pm2_5": 76.5999984741211,
+                        "pm10": 111.0,
+                        "us-epa-index": 4,
+                        "gb-defra-index": 10
+                    }
                 }
             }''';
 }

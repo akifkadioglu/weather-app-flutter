@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
@@ -18,7 +17,7 @@ class ComponentController extends GetxController {
   var isDarkMode = true.obs;
   var containerHeight = 100.0.obs;
   var isSearching = false.obs;
-  var current = currentModelFromJson(JSONMocks().current_mock).obs;
+  var current = currentModelFromJson(JSONMocks().currentMock).obs;
   var adState = false.obs;
   var bottomSheetHeight = 0.0.obs;
   var bottomSheetColor = const Color.fromARGB(255, 231, 54, 42).obs;
@@ -48,9 +47,10 @@ class ComponentController extends GetxController {
           parameter: {
             "q": GlobalFunctions.convertToLatin(value != '' ? value : '$lat, $long'),
             "lang": Get.locale?.languageCode ?? 'en',
+            "aqi": "yes",
           },
         ) ??
-        currentModelFromJson(JSONMocks().current_mock);
+        currentModelFromJson(JSONMocks().currentMock);
     StorageManager.instance.setData(StorageManager.LAST_LAT, current.value.location.lat);
     StorageManager.instance.setData(StorageManager.LAST_LONG, current.value.location.lon);
     isSearching.value = false;

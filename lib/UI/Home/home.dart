@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:weather_app_flutter/UI/Components/custom_appbar.dart';
 import 'package:weather_app_flutter/UI/Components/custom_text_input.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
-import 'package:weather_app_flutter/UI/Home/Components/information_card.dart';
+import 'package:weather_app_flutter/UI/Home/forecast_card.dart';
+import 'package:weather_app_flutter/UI/Home/information_card.dart';
 import 'package:weather_app_flutter/core/Localization/keys.dart';
 import 'package:weather_app_flutter/core/base/state/base_state.dart';
 import 'package:weather_app_flutter/core/base/view/base_view.dart';
@@ -37,6 +38,7 @@ class _HomeState extends BaseState<Home> {
               children: const [
                 CustomTextInput(),
                 InformationCard(),
+                ForecastCard(),
               ],
             ),
           ),
