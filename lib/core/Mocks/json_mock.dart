@@ -55,6 +55,91 @@ class JSONMocks {
                         "us-epa-index": 4,
                         "gb-defra-index": 10
                     }
+                },
+                "forecast": {
+                  "forecastday": [
+                    {
+                      "date": "2023-03-09",
+                      "date_epoch": 1678320000,
+                      "day": {
+                        "maxtemp_c": 19.3,
+                        "maxtemp_f": 66.7,
+                        "mintemp_c": 3.6,
+                        "mintemp_f": 38.5,
+                        "avgtemp_c": 10.2,
+                        "avgtemp_f": 50.4,
+                        "maxwind_mph": 11.9,
+                        "maxwind_kph": 19.1,
+                        "totalprecip_mm": 0.0,
+                        "totalprecip_in": 0.0,
+                        "totalsnow_cm": 0.0,
+                        "avgvis_km": 10.0,
+                        "avgvis_miles": 6.0,
+                        "avghumidity": 57.0,
+                        "daily_will_it_rain": 0,
+                        "daily_chance_of_rain": 0,
+                        "daily_will_it_snow": 0,
+                        "daily_chance_of_snow": 0,
+                        "condition": {
+                          "text": "",
+                          "icon": "",
+                          "code": 1000
+                        },
+                        "uv": 4.0
+                      },
+                      "astro": {
+                        "sunrise": "07:25 AM",
+                        "sunset": "07:05 PM",
+                        "moonrise": "09:03 PM",
+                        "moonset": "08:25 AM",
+                        "moon_phase": "Waning Gibbous",
+                        "moon_illumination": "98",
+                        "is_moon_up": 1,
+                        "is_sun_up": 0
+                      },
+                      "hour": [
+                        {
+                          "time_epoch": 1678392000,
+                          "time": "2023-03-09 23:00",
+                          "temp_c": 6.4,
+                          "temp_f": 43.5,
+                          "is_day": 0,
+                          "condition": {
+                            "text": "",
+                            "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
+                            "code": 1000
+                          },
+                          "wind_mph": 7.4,
+                          "wind_kph": 11.9,
+                          "wind_degree": 196,
+                          "wind_dir": "",
+                          "pressure_mb": 1015.0,
+                          "pressure_in": 29.97,
+                          "precip_mm": 0.0,
+                          "precip_in": 0.0,
+                          "humidity": 75,
+                          "cloud": 5,
+                          "feelslike_c": 4.0,
+                          "feelslike_f": 39.2,
+                          "windchill_c": 4.0,
+                          "windchill_f": 39.2,
+                          "heatindex_c": 6.4,
+                          "heatindex_f": 43.5,
+                          "dewpoint_c": 2.3,
+                          "dewpoint_f": 36.1,
+                          "will_it_rain": 0,
+                          "chance_of_rain": 0,
+                          "will_it_snow": 0,
+                          "chance_of_snow": 0,
+                          "vis_km": 10.0,
+                          "vis_miles": 6.0,
+                          "gust_mph": 15.4,
+                          "gust_kph": 24.8,
+                          "uv": 1.0
+                        }
+                      ]
+                    }
+                  ]
                 }
             }''';
 }

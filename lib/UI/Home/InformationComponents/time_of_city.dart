@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_flutter/UI/Components/custom_chip.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
-import 'package:intl/intl.dart';
 import 'package:weather_app_flutter/core/Localization/keys.dart';
+import 'package:intl/intl.dart';
 
 class TimeOfCity extends StatelessWidget {
   const TimeOfCity({super.key});

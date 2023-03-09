@@ -14,6 +14,7 @@ class LocationOfPlace extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
           CustomChip(

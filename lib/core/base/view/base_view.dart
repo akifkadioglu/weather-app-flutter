@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flutter/core/base/state/base_state.dart';
 
 class BaseView<T> extends StatefulWidget {
   final Widget Function(BuildContext context) onPageBuilder;
@@ -10,7 +11,7 @@ class BaseView<T> extends StatefulWidget {
   _BaseViewState<T> createState() => _BaseViewState<T>();
 }
 
-class _BaseViewState<T> extends State<BaseView<T>> {
+class _BaseViewState<T> extends BaseState<BaseView<T>> {
   @override
   void dispose() {
     super.dispose();
@@ -19,6 +20,7 @@ class _BaseViewState<T> extends State<BaseView<T>> {
 
   @override
   void initState() {
+    loadInterstitialAd();
     super.initState();
   }
 

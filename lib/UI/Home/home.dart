@@ -1,3 +1,4 @@
+import 'package:bottom_sheet/bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_flutter/UI/Components/custom_appbar.dart';
@@ -33,20 +34,53 @@ class _HomeState extends BaseState<Home> {
             preferredSize: Size.fromHeight(60.0),
             child: CustomAppBar(title: I18nKeys.APP_NAME),
           ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: const [
-                CustomTextInput(),
-                InformationCard(),
-                ForecastCard(),
-              ],
-            ),
+          body: Column(
+            children: [
+              Expanded(
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  children: const [
+                    CustomTextInput(),
+                    InformationCard(),
+                  ],
+                ),
+              ),
+              if (MediaQuery.of(context).viewInsets.bottom == 0.0)
+                Obx(() {
+                  return IconButton(
+                    onPressed: c.isSearching.isFalse
+                        ? () {
+                            showFlexibleBottomSheet(
+                              bottomSheetColor: Colors.white,
+                              minHeight: 0,
+                              initHeight: 120 / context.height,
+                              maxHeight: 120 / context.height,
+                              builder:
+                                  (BuildContext context, ScrollController scrollController, double bottomSheetOffset) {
+                                return Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    ForecastCard(),
+                                  ],
+                                );
+                              },
+                              context: context,
+                            );
+                          }
+                        : null,
+                    icon: c.isSearching.value
+                        ? const SizedBox(
+                            height: 15,
+                            width: 15,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
+                          )
+                        : const Icon(Icons.expand_less),
+                  );
+                }),
+            ],
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => c.takeScreenshot(context),
-            child: const Icon(Icons.gesture),
-          ),
-          resizeToAvoidBottomInset: false,
         );
       },
     );

@@ -15,10 +15,10 @@ import 'package:weather_app_flutter/core/storage/storage.dart';
 
 class ComponentController extends GetxController {
   var isDarkMode = true.obs;
-  var containerHeight = 100.0.obs;
+  var containerHeight = 70.0.obs;
   var isSearching = false.obs;
   var current = currentModelFromJson(JSONMocks().currentMock).obs;
-  var adState = false.obs;
+  var adState = true.obs;
   var bottomSheetHeight = 0.0.obs;
   var bottomSheetColor = const Color.fromARGB(255, 231, 54, 42).obs;
   ScreenshotController screenshotController = ScreenshotController();
@@ -42,7 +42,7 @@ class ComponentController extends GetxController {
     var lat = StorageManager.instance.getData(StorageManager.LAST_LAT);
     var long = StorageManager.instance.getData(StorageManager.LAST_LONG);
     current.value = await NetworkManager().getMethod(
-          HTTPRoutes.CURRENT,
+          HTTPRoutes.FORECAST,
           modelFromJson: currentModelFromJson,
           parameter: {
             "q": GlobalFunctions.convertToLatin(value != '' ? value : '$lat, $long'),

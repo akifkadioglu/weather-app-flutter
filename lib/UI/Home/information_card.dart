@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:weather_app_flutter/UI/Components/view_model.dart';
 import 'package:weather_app_flutter/UI/Home/InformationComponents/air_quality.dart';
+import 'package:weather_app_flutter/UI/Home/forecast_card.dart';
 import 'package:weather_app_flutter/UI/Home/InformationComponents/location_of_place.dart';
 import 'package:weather_app_flutter/UI/Home/InformationComponents/name_of_place_and_statu.dart';
 import 'package:weather_app_flutter/UI/Home/InformationComponents/temp_c_and_image.dart';
@@ -26,7 +27,7 @@ class _InformationCardState extends State<InformationCard> {
     return Obx(() {
       return AnimatedContainer(
         width: context.mediaQuery.size.width,
-        height: c.containerHeight.value == 100 ? 100 : null,
+        height: c.containerHeight.value,
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
         child: Obx(() {
@@ -51,7 +52,7 @@ class _InformationCardState extends State<InformationCard> {
                               const LocationOfPlace(),
                               const WindAndHumidity(),
                               const AirQuality(),
-                              mapsButton(c),
+                              mapsAndShareButton(c),
                             ],
                           ),
                         ),
@@ -67,7 +68,7 @@ class _InformationCardState extends State<InformationCard> {
     });
   }
 
-  Row mapsButton(ComponentController c) {
+  Row mapsAndShareButton(ComponentController c) {
     return Row(
       children: [
         Expanded(
@@ -81,6 +82,21 @@ class _InformationCardState extends State<InformationCard> {
               );
             },
             child: Text(I18nKeys.MAPS.tr),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            c.takeScreenshot(context);
+          },
+          child: Transform.scale(
+            scaleX: -1,
+            child: SizedBox(
+              width: 50,
+              child: Icon(
+                color: lightColorScheme.secondary,
+                Icons.reply_all,
+              ),
+            ),
           ),
         ),
       ],
